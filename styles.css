@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ff0000; /* Texto principal en rojo */
+  overflow-x: hidden;
+  background: #fff; /* Fondo blanco */
+}
+
+.full-screen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff url('source/img/background-niryx.png') no-repeat center center;
+  background-size: cover;
+  transition: transform 1s ease;
+  z-index: 1000;
+}
+
+.full-screen-bg.hidden {
+  transform: translateY(-100%);
+}
+
+.content {
+  position: relative;
+  top: 100vh;
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff; /* Fondo blanco para el contenido */
+}
+
+.animated-header {
+  position: fixed;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #ff0000; /* Banner rojo */
+  border: 2px solid #ff0000; /* Borde rojo */
+  z-index: 1001;
+  transition: top 1s ease;
+  box-sizing: border-box;
+}
+
+.animated-header.active {
+  top: 0;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #fff; /* Texto blanco para contraste en el banner rojo */
+  text-decoration: none;
+  font-size: 1.2em;
+  white-space: nowrap;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff; /* Línea blanca al hover */
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  transform: scale(1.1);
+  color: #ffeeee; /* Blanco suave al hover */
+}
+
+@media (max-width: 768px) {
+  .animated-header {
+    padding: 10px;
+  }
+  .logo {
+    max-width: 80px;
+  }
+  .nav {
+    gap: 5px;
+  }
+  .nav a {
+    font-size: 0.9em;
+    margin: 0 2px;
+  }
+  .nav a:hover {
+    transform: scale(1.05);
+  }
+}
+
+.projects-section {
+  margin-top: 40px;
+}
+
+.projects-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff0000; /* Título en rojo */
+}
+
+.game-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.game-item {
+  width: 100%;
+  max-width: 300px;
+  max-height: 350px;
+  padding: 15px;
+  background: #fff; /* Fondo blanco para los items */
+  border-radius: 5px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ff0000; /* Borde rojo */
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2); /* Sombra roja al hover */
+}
+
+.game-item:nth-child(odd) {
+  align-self: flex-end;
+}
+
+.game-item:nth-child(even) {
+  align-self: flex-start;
+}
+
+.game-cover {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.game-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.game-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+  align-self: flex-start;
+  color: #ff0000; /* Título en rojo */
+}
+
+.game-item p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  align-self: flex-start;
+  color: #ff0000; /* Fecha en rojo */
+}
+
+@media (max-width: 768px) {
+  .game-item {
+    width: 90%;
+    max-width: 250px;
+    max-height: 300px;
+    padding: 10px;
+  }
+  .game-item:nth-child(odd),
+  .game-item:nth-child(even) {
+    align-self: center;
+  }
+  .game-cover {
+    max-height: 180px;
+  }
+  .game-list {
+    width: 80%;
+  }
+  .game-item h3 {
+    font-size: 1.1em;
+  }
+  .game-item p {
+    margin: 3px 0 0;
+  }
+}
+
+.about-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fff; /* Fondo blanco */
+  border-radius: 5px;
+  border: 2px solid #ff0000; /* Borde rojo */
+}
+
+.about-section h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #ff0000; /* Título en rojo */
+}
+
+.about-section p {
+  font-size: 1em;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ff0000; /* Texto en rojo */
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 15px;
+  }
+  .about-section p {
+    font-size: 0.9em;
+  }
+}
