@@ -21,23 +21,6 @@ body {
   background: #fff;
 }
 
-/* --- Fondo inicial --- */
-.full-screen-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #fff url('source/img/background-niryx.png') no-repeat center center;
-  background-size: cover;
-  transition: transform 1s ease;
-  z-index: 1; /* Lower z-index to ensure it stays behind content and footer */
-}
-
-.full-screen-bg.hidden {
-  transform: translateY(-100%);
-}
-
 /* --- Header animado --- */
 .animated-header {
   position: fixed;
@@ -305,7 +288,7 @@ body {
   flex-shrink: 0; /* Prevent footer from shrinking */
   width: 100%;
   box-sizing: border-box;
-  z-index: 2; /* Ensure footer is above background */
+  z-index: 2; /* Ensure footer is above content */
 }
 
 .footer-content {
