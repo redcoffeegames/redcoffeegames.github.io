@@ -93,20 +93,21 @@ body {
 
 /* Sección Games */
 .projects-section {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .projects-section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2.5em;
+  margin-bottom: 30px;
   color: #ff0000;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .game-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 80%;
+  gap: 40px;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -114,62 +115,90 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  background: #fff;
+  gap: 25px;
+  background: #0d0d0d; /* Fondo oscuro para contraste */
   border: 2px solid #ff0000;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
 .game-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
 }
 
 .game-cover {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.game-cover:hover {
+  transform: scale(1.05);
 }
 
 .game-info {
   text-align: left;
-  color: #ff0000;
+  color: #fff;
 }
 
 .game-info h3 {
   margin: 0;
-  font-size: 1.5em;
-  color: #ff0000;
+  font-size: 1.8em;
+  color: #ff4d4d;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
 
 .game-info p {
   margin: 5px 0;
   font-size: 1em;
+  color: #ddd;
+}
+
+/* Tags */
+.game-tags {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.game-tags span {
+  background: #ff0000;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón dinámico */
+.game-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #ff0000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.game-btn:hover {
+  background: #cc0000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+  transform: scale(1.05);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .animated-header {
-    padding: 10px;
-  }
-  .logo {
-    max-width: 80px;
-  }
-  .nav {
-    gap: 5px;
-  }
-  .nav a {
-    font-size: 0.9em;
-    margin: 0 2px;
-  }
-  .nav a:hover {
-    transform: scale(1.05);
-  }
-
   .game-item {
     flex-direction: column;
     text-align: center;
