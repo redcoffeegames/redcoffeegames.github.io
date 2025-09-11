@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextButton = document.querySelector('.carousel-next');
   let currentSlide = 0;
 
+  // Verificar si los elementos existen
+  if (!slides.length || !dots.length || !prevButton || !nextButton) {
+    console.error('Error: No se encontraron los elementos del carrusel. Verifica el HTML.');
+    return;
+  }
+
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.remove('active');
@@ -39,6 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
   }, 5000);
 
-  // Show the first slide initially
+  // Mostrar el primer slide al cargar
   showSlide(currentSlide);
 });
