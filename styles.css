@@ -308,3 +308,55 @@ body {
   }
 }
 
+/* Footer */
+.site-footer {
+  background: #ff0000; /* Fondo rojo */
+  color: #fff; /* Texto blanco */
+  padding: 20px 40px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  font-size: 0.9em;
+}
+
+.footer-left a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-left a:hover {
+  opacity: 0.8;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo {
+  max-width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.4));
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .footer-right {
+    justify-content: center;
+  }
+}
