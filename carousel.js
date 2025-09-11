@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('carousel.js cargado correctamente');
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.carousel-dots .dot');
   const prevButton = document.querySelector('.carousel-prev');
@@ -7,11 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Verificar si los elementos existen
   if (!slides.length || !dots.length || !prevButton || !nextButton) {
-    console.error('Error: No se encontraron los elementos del carrusel. Verifica el HTML.');
+    console.error('Error: No se encontraron los elementos del carrusel. Verifica el HTML y los selectores.');
     return;
   }
 
   function showSlide(index) {
+    console.log('Mostrando slide:', index);
     slides.forEach((slide, i) => {
       slide.classList.remove('active');
       dots[i].classList.remove('active');
