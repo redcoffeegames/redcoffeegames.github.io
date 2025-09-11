@@ -1,4 +1,4 @@
-/* Mantener footer al final de la página */
+/* --- Estructura general para que el footer quede abajo --- */
 html, body {
   height: 100%;
   margin: 0;
@@ -10,15 +10,15 @@ html, body {
   flex: 1; /* Empuja el footer hacia abajo */
 }
 
+/* --- Body global --- */
 body {
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
   color: #ff0000;
   overflow-x: hidden;
   background: #fff;
 }
 
+/* --- Fondo inicial --- */
 .full-screen-bg {
   position: fixed;
   top: 0;
@@ -35,6 +35,7 @@ body {
   transform: translateY(-100%);
 }
 
+/* --- Contenido --- */
 .content {
   position: relative;
   top: 100vh;
@@ -43,6 +44,7 @@ body {
   background: #fff;
 }
 
+/* --- Header animado --- */
 .animated-header {
   position: fixed;
   top: -200px;
@@ -68,6 +70,7 @@ body {
   height: auto;
 }
 
+/* --- Navegación --- */
 .nav {
   display: flex;
   gap: 10px;
@@ -103,22 +106,41 @@ body {
   color: #ffeeee;
 }
 
-/* Sección Games */
+/* --- Responsive Header --- */
+@media (max-width: 768px) {
+  .animated-header {
+    padding: 10px;
+  }
+  .logo {
+    max-width: 80px;
+  }
+  .nav {
+    gap: 5px;
+  }
+  .nav a {
+    font-size: 0.9em;
+    margin: 0 2px;
+  }
+  .nav a:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* --- Sección Projects/Games --- */
 .projects-section {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .projects-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
+  font-size: 2em;
+  margin-bottom: 20px;
   color: #ff0000;
-  text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
 }
 
 .game-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   width: 85%;
   margin: 0 auto;
 }
@@ -127,11 +149,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 25px;
-  background: #0d0d0d; /* Fondo oscuro para contraste */
+  gap: 20px;
+  background: #0d0d0d;
   border: 2px solid #ff0000;
-  border-radius: 15px;
-  padding: 25px;
+  border-radius: 10px;
+  padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
@@ -142,8 +164,8 @@ body {
 }
 
 .game-cover {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
@@ -161,7 +183,7 @@ body {
 
 .game-info h3 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: #ff4d4d;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
 }
@@ -172,61 +194,22 @@ body {
   color: #ddd;
 }
 
-/* Tags */
-.game-tags {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.game-tags span {
-  background: #ff0000;
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Botón dinámico */
-.game-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 25px;
-  background: #ff0000;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-.game-btn:hover {
-  background: #cc0000;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
-  transform: scale(1.05);
-}
-
-/* Responsive */
+/* --- Responsive Games --- */
 @media (max-width: 768px) {
   .game-item {
     flex-direction: column;
     text-align: center;
   }
-
   .game-cover {
     width: 100%;
     height: auto;
   }
-
   .game-info {
     text-align: center;
   }
 }
 
-/* Sección About */
+/* --- Sección About --- */
 .about-section {
   margin-top: 40px;
   padding: 20px;
@@ -258,7 +241,7 @@ body {
   }
 }
 
-/* Redes sociales */
+/* --- Redes Sociales --- */
 .social-section {
   margin-top: 50px;
   padding: 20px;
@@ -320,12 +303,12 @@ body {
   }
 }
 
-/* Footer */
+/* --- Footer --- */
 .site-footer {
-  background: #ff0000; /* Fondo rojo */
-  color: #fff; /* Texto blanco */
+  background: #ff0000;
+  color: #fff;
   padding: 20px 40px;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .footer-content {
