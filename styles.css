@@ -16,7 +16,9 @@ body {
 /* Ensure content takes up available space to push footer down */
 .content {
   flex: 1 0 auto; /* Grow to fill space, don't shrink, auto basis */
-  min-height: calc(100vh - 100px); /* Ensure content takes at least viewport height minus footer height */
+  padding: 20px;
+  text-align: center;
+  background: #fff;
 }
 
 /* --- Fondo inicial --- */
@@ -29,20 +31,11 @@ body {
   background: #fff url('source/img/background-niryx.png') no-repeat center center;
   background-size: cover;
   transition: transform 1s ease;
-  z-index: 1000;
+  z-index: 1; /* Lower z-index to ensure it stays behind content and footer */
 }
 
 .full-screen-bg.hidden {
   transform: translateY(-100%);
-}
-
-/* --- Contenido --- */
-.content {
-  position: relative;
-  top: 100vh;
-  padding: 50px 20px;
-  text-align: center;
-  background: #fff;
 }
 
 /* --- Header animado --- */
@@ -312,6 +305,7 @@ body {
   flex-shrink: 0; /* Prevent footer from shrinking */
   width: 100%;
   box-sizing: border-box;
+  z-index: 2; /* Ensure footer is above background */
 }
 
 .footer-content {
