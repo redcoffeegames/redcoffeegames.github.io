@@ -1,4 +1,4 @@
-/* Estructura general */
+/* Mantener footer al final de la página */
 html, body {
   height: 100%;
   margin: 0;
@@ -7,7 +7,7 @@ html, body {
 }
 
 .content {
-  flex: 1; /* Ocupa todo el espacio disponible */
+  flex: 1; /* Empuja el footer hacia abajo */
 }
 
 body {
