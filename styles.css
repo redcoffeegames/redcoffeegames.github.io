@@ -6,16 +6,17 @@ html, body {
   flex-direction: column;
 }
 
-.content {
-  flex: 1; /* Empuja el footer hacia abajo */
-}
-
-/* --- Body global --- */
 body {
   font-family: Arial, sans-serif;
   color: #ff0000;
   overflow-x: hidden;
   background: #fff;
+}
+
+/* Ensure content takes up available space to push footer down */
+.content {
+  flex: 1 0 auto; /* Grow to fill space, don't shrink, auto basis */
+  min-height: calc(100vh - 100px); /* Ensure content takes at least viewport height minus footer height */
 }
 
 /* --- Fondo inicial --- */
@@ -308,7 +309,9 @@ body {
   background: #ff0000;
   color: #fff;
   padding: 20px 40px;
-  margin-top: 40px;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-content {
